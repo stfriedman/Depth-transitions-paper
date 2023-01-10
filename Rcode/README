@@ -1,0 +1,11 @@
+plot_ = scripts to plot figures
+RUN_ script = scripts to run all analyses
+numbered scripts are the order of analyses run
+suffix = particular set of analysis
+
+alf_rescaled = clade transition rates run with the Rabosky tree rescaled to the Alfaro tree
+ava_rescaled = clade transition rates run with the Rabosky tree rescaled to the Ava tree
+avatree = Mk analysis/Fig 2 rerun with Ava tree trimmed to Rabosky species
+redepth = analysis with three different depth categorization methods
+revisions = most updated data for the original analyses
+med_tridepth = species depth categories are based on median depth rather than maximum depth

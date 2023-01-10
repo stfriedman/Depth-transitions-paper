@@ -1,0 +1,102 @@
+,,FISHBASE,,,ALTERNATIVE,,,
+species,family,depth_min,depth_max,depth_cat,depth_min,depth_max,depth_cat,source
+Acanthurus_pyroferus,Acanthuridae,4,60,shallow,4,60,shallow,Fricke et al. 2011
+Naso_maculatus,Acanthuridae,43,220,intermediate,43,220,intermediate,Fricke et al. 2011
+Naso_mcdadei,Acanthuridae,5,65,shallow,20,65,shallow,IUCN
+Zebrasoma_gemmatum,Acanthuridae,10,61,shallow,10,60,shallow,IUCN
+Achirus_lineatus,Achiridae,1,20,shallow,1,110,shallow,IUCN
+Acipenser_sturio,Acipenseridae,4,93,shallow,5,60,shallow,Lepage and Rochard 1995
+Anarrhichthys_ocellatus,Anarhichadidae,1,226,intermediate,0,226,intermediate,Val Kells et al. 2016
+Anguilla_megastoma,Anguillidae,0,3000,deep,0,3000,deep,Fricke et al. 2011
+Cheilodipterus_macrodon,Apogonidae,0,40,shallow,0,40,shallow,IUCN
+Plicofollis_tonggol,Ariidae,10,50,shallow,,"""coastal""",shallow,FAO
+Ecsenius_bicolor,Blenniidae,1,25,shallow,1,25,shallow,Fricke et al. 2011
+Synchiropus_monacanthus,Callionymidae,175,428,intermediate,175,428,intermediate,Smith and Heemstra 1986
+Decapterus_macrosoma,Carangidae,20,214,intermediate,20,214,intermediate,Fricke et al. 2011
+Trachinotus_africanus,Carangidae,20,50,shallow,20,50,shallow,al Sakaff and Esseen 1999
+Trachurus_novaezelandiae,Carangidae,22,500,intermediate,0,550,intermediate,IUCN
+Icichthys_australis,Centrolophidae,0,2141,deep,,2000,deep,McDowall 1982
+Chaetodon_adiergastos,Chaetodontidae,1,30,shallow,1,30,shallow,IUCN
+Chaetodon_auriga,Chaetodontidae,1,60,shallow,0,35,shallow,Fricke et al. 2011
+Chelmon_muelleri,Chaetodontidae,2,10,shallow,1,20,shallow,IUCN
+Cheilodactylus_vestitus,Cheilodactylidae,5,30,shallow,0,30,shallow,Fricke et al. 2011
+Chiasmodon_niger,Chiasmodontidae,700,2745,deep,750,2745,deep,Coad and Reist 2004
+Itycirrhitus_wilhelmi,Cirrhitidae,1,55,shallow,1,55,shallow,IUCN
+Dorosoma_petenense,Clupeidae,0,15,shallow,0,50,shallow,IUCN
+Engraulis_ringens,Clupeidae,3,80,shallow,0,50,shallow,IUCN
+Herklotsichthys_spilurus,Clupeidae,0,50,shallow,0,50,shallow,IUCN
+Paraconger_notialis,Congridae,25,50,shallow,25,50,shallow,IUCN
+Chilomycterus_antillarum,Diodontidae,1,44,shallow,0,25,shallow,IUCN
+Elops_hawaiensis,Elopidae,1,30,shallow,1,30,shallow,IUCN
+Discotrema_monogrammum,Gobiesocidae,6,20,shallow,10,20,shallow,IUCN
+Amblygobius_decussatus,Gobiidae,3,25,shallow,3,25,shallow,Fricke et al. 2011
+Bryaninops_yongei,Gobiidae,3,45,shallow,3,45,shallow,Fricke et al. 2011
+Ctenogobiops_tangaroai,Gobiidae,4,40,shallow,2,40,shallow,IUCN
+Elacatinus_horsti,Gobiidae,7,27,shallow,1,40,shallow,IUCN
+Fusigobius_duospilus,Gobiidae,1,46,shallow,0,42,shallow,Fricke et al. 2011
+Gobius_bucchichi,Gobiidae,1,8,shallow,1,6,shallow,IUCN
+Gobius_xanthocephalus,Gobiidae,3,36,shallow,0,36,shallow,IUCN
+Gramma_loreto,Grammatidae,1,60,shallow,1,100,shallow,IUCN
+Haemulon_vittatum,Haemulidae,15,50,shallow,5,50,shallow,IUCN
+Plectorhinchus_gibbosus,Haemulidae,8,25,shallow,0,20,shallow,Fricke et al. 2011
+Hexagrammos_lagocephalus,Hexagrammidae,0,596,intermediate,0,596,intermediate,Val Kells et al. 2016
+Sargocentron_ittodai,Holocentridae,5,70,shallow,5,70,shallow,IUCN
+Makaira_nigricans,Istiophoridae,0,200,intermediate,0,209,intermediate,Block et al. 1992
+Kyphosus_cinerascens,Kyphosidae,1,45,shallow,1,40,shallow,IUCN
+Calotomus_carolinus,Labridae,1,71,shallow,1,71,shallow,Mundy 2005
+Cymolutes_torquatus,Labridae,2,20,shallow,1,20,shallow,Fricke et al. 2011
+Labroides_pectoralis,Labridae,2,30,shallow,2,28,shallow,Fricke et al. 2011
+Scarus_niger,Labridae,0,20,shallow,0,20,shallow,IUCN
+Thalassoma_hardwicke,Labridae,0,15,shallow,0,15,shallow,Fricke et al. 2011
+Karalla_dussumieri,Leiognathidae,10,40,shallow,10,40,shallow,FAO (https://www.fao.org/3/y0770e/y0770e03.pdf)
+Malacocephalus_laevis,Macrouridae,200,1000,deep,200,1000,deep,IUCN
+Mene_maculata,Menidae,50,200,intermediate,,200,intermediate,FAO (https://www.fao.org/3/y0770e/y0770e03.pdf)
+Lyconus_brachycolus,Merlucciidae,150,997,intermediate,,1000,deep,IUCN
+Pseudophycis_barbata,Moridae,0,300,intermediate,50,550,intermediate,FAO
+Oedalechilus_labiosus,Mugilidae,0,3,shallow,0,3,shallow,Fricke et al. 2011
+Mulloidichthys_flavolineatus,Mullidae,1,76,shallow,1,97,shallow,Mundy 2005
+Gymnothorax_meleagris,Muraenidae,1,51,shallow,0,51,shallow,Fricke et al. 2011
+Muraena_helena,Muraenidae,1,801,intermediate,15,801,intermediate,Jimenez et al. 2007
+Bolinichthys_longipes,Myctophidae,50,1021,deep,40,1000,deep,IUCN
+Lampanyctus_macdonaldi,Myctophidae,60,1464,deep,0,1187,deep,Coad and Reist 2004
+Lampanyctus_pusillus,Myctophidae,40,850,intermediate,40,850,intermediate,IUCN
+Notoscopelus_bolini,Myctophidae,0,1300,deep,0,1000,deep,IUCN
+Parascolopsis_eriomma,Nemipteridae,25,264,intermediate,25,264,intermediate,IUCN
+Neosebastes_scorpaenoides,Neosebastidae,2,140,shallow,5,140,shallow,Motomura 2004
+Polyacanthonotus_challengeri,Notacanthidae,777,4560,deep,900,4600,deep,IUCN
+Histiodraco_velifer,Notothenioid,210,667,intermediate,227,416,intermediate,Lombarte and Bozzano 2003
+Xyrias_revulsus,Ophichthidae,146,209,intermediate,146,209,intermediate,McCosker 1998
+Lamprogrammus_niger,Ophidiidae,741,2000,deep,740,2000,deep,IUCN
+Neocyttus_helgae,Oreosomatidae,988,1210,deep,900,1700,deep,IUCN
+Rogadius_patriciae,Platycephalidae,14,100,shallow,14,100,shallow,Fricke et al. 2011
+Maulisia_argipalla,Platytroctidae,400,1620,deep,200,2607,deep,GBIF
+Poecilopsetta_beanii,Poecilopsettidae,155,1636,deep,155,1641,deep,IUCN
+Altrichthys_curatus,Pomacentridae,1,10,shallow,1,10,shallow,Bernardi et al. 2016
+Amphiprion_leucokranos,Pomacentridae,2,12,shallow,1,15,shallow,FAO
+Chromis_degruyi,Pomacentridae,85,120,shallow,85,120,shallow,Pyle et al. 2008
+Chromis_weberi,Pomacentridae,3,40,shallow,3,40,shallow,Fricke et al. 2011
+Dascyllus_flavicaudus,Pomacentridae,3,40,shallow,2,40,shallow,Fricke et al. 2011
+Plectroglyphidodon_leucozonus,Pomacentridae,0,6,shallow,0,6,shallow,Fricke et al. 2011
+Pomacentrus_agassizii,Pomacentridae,1,4,shallow,,"""inshore lagoons""",shallow,McClanahan et al. 2021
+Pomacentrus_philippinus,Pomacentridae,1,12,shallow,1,12,shallow,Fricke et al. 2011
+Pomachromis_richardsoni,Pomacentridae,5,25,shallow,2,25,shallow,Fricke et al. 2011
+Scomberomorus_tritor,Scombridae,1,40,shallow,1,40,shallow,IUCN
+Lepidorhombus_boscii,Scophthalmidae,7,800,intermediate,7,800,intermediate,IUCN
+Scorpaenopsis_cirrosa,Scorpaenidae,3,91,shallow,37,91,shallow,FAO
+Sebastes_baramenuke,Sebastidae,100,500,intermediate,100,760,intermediate,GBIF
+Sebastes_constellatus,Sebastidae,24,274,intermediate,16,275,intermediate,Val Kells et al. 2016
+Sebastes_eos,Sebastidae,76,366,intermediate,45,365,intermediate,Val Kells et al. 2016
+Sebastes_hopkinsi,Sebastidae,18,183,shallow,60,119,shallow,Love et al. 1990
+Sebastes_zacentrus,Sebastidae,26,476,intermediate,24,444,intermediate,NOAA
+Cephalopholis_miniata,Serranidae,2,150,shallow,2,150,shallow,Fricke et al. 2011
+Paranthias_colonus,Serranidae,10,70,shallow,0,120,shallow,IUCN
+Aseraggodes_kobensis,Soleidae,80,100,shallow,80,100,shallow,IUCN
+Solea_senegalensis,Soleidae,12,65,shallow,1,100,shallow,FAO (https://www.fao.org/fishery/en/culturedspecies/solea_spp/en)
+Lumpenella_longirostris,Stichaeidae,25,1140,deep,24,1195,deep,Val Kells et al. 2016
+Tactostoma_macropus,Stomiidae,30,2000,deep,30,2000,deep,IUCN
+Hippocampus_trimaculatus,Syngnathidae,0,100,shallow,10,100,shallow,IUCN
+Kaupus_costatus,Syngnathidae,0,50,shallow,0,50,shallow,IUCN
+Microphis_brachyurus,Syngnathidae,0,5,shallow,0,5,shallow,Fricke et al. 2011
+Synodus_binotatus,Synodontidae,1,88,shallow,1,88,shallow,Fricke et al. 2011
+Aphanopus_intermedius,Trichiuridae,300,1350,deep,200,1700,deep,Fricke et al. 2011
+Gymnelus_viridis,Zoarcidae,0,320,intermediate,0,256,intermediate,Coad and Reist 2004

@@ -1,0 +1,232 @@
+---
+title: "Supplemental Materials"
+output: pdf_document
+---
+```{r setup II, include=FALSE, eval=TRUE}
+knitr::opts_chunk$set(message=FALSE, echo=FALSE, warning=FALSE, fig.align = "center")
+```
+
+
+**Table S3** Summary table for each family in the dataset. Includes the number of species in the dataset for each family (n_species), percent species sampled compared to all known species in that family, median latitude, and the percentage of sampled species in each depth category.
+```{r fam summary, results = 'asis'}
+knitr::include_graphics(here("results/tables/TableS3.pdf"))
+```
+\newpage
+
+
+\newpage
+
+
+**Table S4** Best-fit all-rates-different Q matrix detailing the transition rates between each discrete state
+```{r Q matrix, results='asis', warning=FALSE}
+knitr::include_graphics(here("results/tables/TableS4_Qmat.pdf"))
+```
+\newpage
+
+
+
+```{r depth summ, fig.width=10, fig.height=14}
+knitr::include_graphics(here("results/figures/depth_summ_fig.pdf"))
+```
+**Figure S1** Summary figure of the distribution of depths for species within each of the 46 clades.
+
+\newpage
+
+
+```{r simmap}
+## Fig S2: Simmap with clade MRCAS
+ta_results <- readRDS(here("data/prog_data/ta_results_revisions.Rdata"))
+simtree <- readRDS(here("data/prog_data/depthsimtree_revisions.Rdata"))
+
+cols <- setNames(c("powderblue", "#2C8EB5", "#16465B"), c("shallow", "intermediate", "deep"))
+n <- length(simtree[[1]]$tip.label)
+
+plot(simtree[[1]], colors = cols, type = "fan", lwd = 0.5, ftype = "off",
+      xlim=c(-40, 40))
+# barplot_phylo(rep(5, n), bar.col = rep("white", n),
+#               simtree[[1]], bar.offset = 0.05, tip.offset=0.05,
+#               bar.width = 0.2, tip.col = "black", tip.cex = 0.06,
+#               tip.labels = TRUE, legend = FALSE)
+for(i in 1:nrow(ta_results)){
+  arc.cladelabels(text = ta_results$family[[i]], node = ta_results$mrca[[i]],
+                  orientation = "horizontal", ln.offset = 1.012, 
+                  lab.offset = 1.013, cex = 0.3, mark.node = FALSE)
+}
+```
+**Figure S2** Stochastic character map of depth evolution with all 49 clade names printed at the most recent common ancestor. Darker branch colors represent deeper depths.
+
+\newpage
+
+
+```{r redepth, fig.width=10, fig.height=14}
+knitr::include_graphics(here("results/figures/Fig1_redepth.pdf"))
+```
+
+**Figure S3** Results of re-running analyses with different depth categories (grey bars). Points represent the observed number of depth transitions averaged across 100 stochastic character maps (green: greater than expectation, grey: within expectation, yellow: below expectation). Findings are consistent across all depth categorization systems.
+
+\newpage
+
+```{r med depth, fig.width=10, fig.height=14}
+knitr::include_graphics(here("results/figures/Fig1_med_tridepth.pdf"))
+
+```
+**Figure S4** Results of re-running analyses with species categories based on median depth as opposed to maximum depth. Points represent the observed number of depth transitions averaged across 100 stochastic character maps (green: greater than expectation, grey: within expectation, yellow: below expectation). Findings are largely consistent with the original analyses.
+
+\newpage
+
+
+```{r Alf tree, fig.width=10, fig.height=14}
+knitr::include_graphics(here("results/figures/Fig1_alf_rescaled.pdf"))
+
+```
+**Figure S5** Results of re-running analyses with the Rabosky phylogeny rescaled to the published phylogeny of Alfaro et al. 2018. 
+
+\newpage
+
+
+```{r Ava tree, fig.width=10, fig.height=14}
+knitr::include_graphics(here("results/figures/Fig1_ava_rescaled.pdf"))
+
+```
+**Figure S6** Results of re-running analyses with the Rabosky phylogeny rescaled to the published phylogeny of Ghezelayagh et al. 2022. 
+
+
+\newpage
+
+```{r resamp fig1}
+knitr::include_graphics(here("results/figures/Fig1_resamp_tips.pdf"))
+
+```
+**Figure S7** Results of sensitivity analyses with the Rabosky phylogeny randomly re-sampled at 40-90% of tips to approximate topological uncertainty.
+
+
+
+
+```{r Ava fig2}
+knitr::include_graphics(here("results/figures/Fig2_avatree.pdf"))
+
+```
+**Figure S8** Results of re-running Mk-model analyses with the trimmed UCE phylogeny of Ghezelayagh et al. 2022. 
+
+
+\newpage
+
+```{r posterior}
+param_run1 <- read_csv(here("analyses/musscrat/output/params_run1_prior500.csv")) %>%
+  mutate(prior = "500 shifts")
+param_run2 <- read_csv(here("analyses/musscrat/output/params_run2_400shifts.csv")) %>%
+  mutate(prior = "400 shifts")
+param_run3 <- read_csv(here("analyses/musscrat/output/params_run3_600shifts.csv")) %>%
+  mutate(prior = "600 shifts")
+
+bind_rows(param_run1, param_run2, param_run3) %>%
+  ggplot(aes(x = total_num_changes, y = ..scaled..)) +
+  geom_density(aes(fill = prior, col = prior), alpha = 0.4, lwd = 1) +
+  theme_classic() +
+  theme(legend.title = element_blank(),
+        axis.line = element_line(size = 0.2),
+        axis.ticks = element_line(size = 0.1),
+        axis.text = element_text(size = 10),
+        axis.title = element_text(size = 14)) +
+  xlab("Number of Transitions") + ylab("Density") +
+  scale_fill_manual(values = wes_palette(5, name = "Zissou1")[c(5,1,3)]) +
+  scale_color_manual(values = wes_palette(5, name = "Zissou1")[c(5,1,3)])
+```
+**Figure S9** Posterior distribution of the number of discrete state transitions across the phylogeny for MCMCs with different priors.
+
+\newpage
+
+
+```{r posterior2}
+bind_rows(param_run1, param_run2, param_run3) %>%
+  dplyr::rename(tropical = `zeta[1]`, temperate = `zeta[2]`, polar = `zeta[3]`) %>%
+  select(tropical:polar, prior) %>%
+  pivot_longer(tropical:polar, names_to = "lat", values_to = "rate") %>%
+  ggplot(aes(x = rate, y = ..scaled.., group = paste0(lat, prior))) +
+  geom_density(aes(fill = lat, col = lat),
+               alpha = 0.2, lwd = 1) +
+  theme_classic() +
+  geom_hline(yintercept = 0, lwd = 1.5, col = "white") +
+  theme(legend.title = element_blank(),
+        axis.line = element_line(size = 0.2),
+        axis.ticks = element_line(size = 0.1),
+        axis.text = element_text(size = 10),
+        axis.title = element_text(size = 14)) +
+  xlab("Rate of Depth Evolution") + ylab("Density") +
+  scale_fill_manual(values = c("#472D7B", "#20A486", "#E6AE48FF")) +
+  scale_color_manual(values = c("#472D7B", "#20A486", "#E6AE48FF"))
+```
+**Figure S10** Posterior distributions of state-specific rates of depth evolution for each MCMC chain.
+
+
+\newpage
+```{r PCD setup,}
+## species richness and PCD
+pal <- wes_palette("Zissou1", 100, type = "continuous")
+basepath <- here("data/Rabosky2019_suppmat/")
+cell_info <- read_csv(paste0(basepath, "cellinfo_0.5.csv")) %>%
+  select(cell, DepthMax)
+cell_file <- read_csv(paste0(basepath, 'dataFiles/cellValues_fixed0.5.csv')) %>%
+  left_join(cell_info, by = "cell")
+
+input_files <- list.files(here("analyses/slurm/results"), pattern='pcd_cell', full.names=TRUE)
+pcd_df <- tibble(file = input_files) %>%
+  mutate(data = purrr:::map(file, readRDS)) %>%
+  dplyr:::select(-file) %>%
+  unnest()
+
+pcd_bycell <- pcd_df %>%
+  unnest() %>%
+  pivot_wider(names_from = metric, values_from = values) %>%
+
+  # making PCD 0 when all species shared between photic/aphotic
+  mutate(PCD = ifelse(is.na(PCDc) & !is.na(PCD), 0, PCD)) %>%
+  mutate(cell = gsub("V", "cell", cell)) %>%
+  right_join(cell_file, by = "cell") %>%
+  arrange(match(cell, cell_file$cell))
+```
+
+```{r PCD breakdown}
+## Fig S2: PCDc and PCDp
+p1 <- pcd_bycell %>%
+  filter(marineCells == 1) %>%
+  filter(PCD < 3.5) %>%
+ggplot(aes(x = midLat, y = PCDc)) +
+  geom_point(aes(col = PCDc), alpha = 0.5, cex = 0.8) +
+  theme_classic() +
+  ylab("PCDc") +
+  xlab("Latitude (cell midpoint)") +
+  theme(legend.position = "none") +
+  scale_color_gradientn(colors = pal)
+
+p2 <- pcd_bycell %>%
+  filter(marineCells == 1) %>%
+  filter(PCD < 3.5) %>%
+ggplot(aes(x = midLat, y = PCDp)) +
+  geom_point(aes(col = PCDp), alpha = 0.5, cex = 0.8) +
+  theme_classic() +
+  ylab("PCDp") +
+  xlab("Latitude (cell midpoint)") +
+  theme(legend.position = "none") +
+  scale_color_gradientn(colors = pal)
+
+plot_grid(p1, p2, labels = c('A', 'B'), align = "h", nrow = 1, label_size = 18)
+```
+**Figure S11** The two components of phylogenetic community dissimilarity, PCDc and PCDp, visualized by latitude. PCDc is analogous to Sorenson's Index, while PCDp evaluates the phylogenetic distance between nonshared species in different communities. Shallow and deep fishes at high latitudes are more similar than those at lower latitudes by both metrics.
+
+\newpage
+
+
+```{r richness}
+pcd_bycell %>%
+  filter(marineCells == 1) %>%
+  filter(PCD < 4) %>%
+ggplot(aes(x = PCD, y = spCount)) +
+  geom_point(col = "grey40", alpha = 0.5, cex = 1.3) +
+  theme_classic() +
+  ylab("Species Richness") +
+  xlab("PCD") +
+  theme(legend.position = "none")
+```
+**Figure S12** Species richness and phylogenetic community dissimilarity (PCD) within global grid cells are weakly correlated (p < 2e-16, r-squared = 0.28).
+
