@@ -19,6 +19,7 @@ for (p in PKG) {
 rm(PKG, p)
 
 
+# function modified from the 'pcd' function in the picante R package to run faster
 optim_pcd <- function(comm, tree, PSVmncd = NULL, PSVpool = NULL, reps = 10^4) {
   SSii <- PSVmncd
   SCii <- PSVpool
@@ -199,7 +200,7 @@ get_mapped_edge <- function(x) {
 }
 
 
-
+# counts the number of transitions since the MRCA of a clade
 num_trans <- function(mrca, simtree) {
   trans_count <- function(desc) {
     edges <- get_mapped_edge(simtree) %>%
