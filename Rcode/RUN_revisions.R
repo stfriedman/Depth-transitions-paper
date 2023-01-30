@@ -101,11 +101,6 @@ source(here("Rcode/plot_fig2.R"))
 # source(here("Rcode/plot_fig4.R"))
 
 
-# # BISSINESS ANALYSIS  --------------------------------------------------
-# source(here("Rcode/05_bisseness.R"))
-
-
-
 # COMPILES SUPPLEMENTAL MATERIALS  --------------------------------------------
 rmarkdown::render(here("Rcode/supplemental_materials.Rmd"),
                     output_dir = here("results/"),
